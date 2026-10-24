@@ -1,41 +1,188 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="ar" dir="rtl">
 <head>
-    <title>Brain Boost</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>رحلة الإنجاز | طوّري مهاراتك</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <header>
-        <nav>
-           <ul>
-            <li>Home</li>
-            <li>Tasks</li>
-            <li>Focus</li>
-            <li>About</li>
-           </ul>
-        </nav>
+  <div class="app">
+
+    <header class="topbar">
+      <a class="brand" href="#home">
+        <span class="brand-icon">✧</span>
+        <span>رحلة الإنجاز<span class="brand-dot">.</span></span>
+      </a>
+
+      <nav class="top-nav">
+        <a class="nav-link active" href="#home">⌂ الرئيسية</a>
+        <a class="nav-link" href="#quests">✧ المهام</a>
+        <a class="nav-link" href="#badges">♧ الإنجازات</a>
+      </nav>
+
+      <button class="theme-btn" id="themeBtn" aria-label="تغيير المظهر">☾</button>
     </header>
-    <section class="hero">
-        <div class="hero-text">
-            <h2>Plan Your Day</h2>
-            <p>Organize your tasks and make your day better.</p>
-            <button>Start Planning </button>
+
+    <main id="home">
+
+      <section class="hero">
+        <div class="hero-content">
+          <span class="eyebrow">✦ رحلتك الجديدة تبدأ هنا</span>
+
+          <h1>كوني النسخة<br>التي تحلمين <span>بها.</span></h1>
+
+          <p>
+            خطوات صغيرة، وتقدّم حقيقي.
+            تعلّمي مهارات جديدة، وحققي أهدافك،
+            واجعلي كل يوم فرصة للنمو.
+          </p>
+
+          <a href="#quests" class="primary-btn">
+            اكتشفي المهام <span>↗</span>
+          </a>
+
+          <div class="hero-stats">
+            <div><strong>٦</strong><span>مهام متاحة</span></div>
+            <div><strong>∞</strong><span>فرص جديدة</span></div>
+            <div><strong>١</strong><span>بداية جديدة</span></div>
+          </div>
         </div>
-        <div class="hero-image">
-            <img src="image.jpg" alt="Daily planning">
+
+        <div class="hero-art" aria-label="سماء ليلية خيالية">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="planet">✦</div>
+          <div class="moon">☾</div>
+          <span class="floating-star star-one">✧</span>
+          <span class="floating-star star-two">✦</span>
+          <span class="floating-star star-three">✧</span>
+          <div class="mountains mountain-back"></div>
+          <div class="mountains mountain-front"></div>
+
+          <div class="art-label">
+            <span>رحلتك الخاصة</span>
+            <strong>كل إنجاز يبدأ بخطوة.</strong>
+          </div>
         </div>
-    </section>
-    <div class="planner-container">
-    <h1>Code My Day</h1>
+      </section>
 
-    <div class="input-section">
-        <input type="text" id="task-input" placeholder="Booting task terminal...">
-        <button id="add-btn">Add Mission</button>
-    </div>
+      <section class="welcome-row">
+        <div>
+          <span class="eyebrow">مساحتك الخاصة</span>
+          <h2>أهلًا بعودتك يا <span id="playerName">مبدعة</span> ✦</h2>
+          <p>كل خطوة صغيرة تقرّبك من الشخص الذي تريدين أن تصبحيه.</p>
+        </div>
 
-    <ul id="task-list"></ul>
-</div>
+        <div class="level-card">
+          <div class="level-top">
+            <span>مستواك الحالي</span>
+            <strong id="levelLabel">المستوى ١</strong>
+          </div>
 
-<script src="script.js"></script>
+          <div class="progress-track">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+
+          <div class="progress-label">
+            <span id="xpLabel">٠ من ٥٠ نقطة</span>
+            <span id="nextXpLabel">٥٠ نقطة للمستوى التالي</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats-grid">
+        <article class="stat-card">
+          <span class="stat-icon purple">✧</span>
+          <div>
+            <span>مجموع النقاط</span>
+            <strong id="totalXp">٠</strong>
+            <small>اجمعي النقاط بإنجاز المهام</small>
+          </div>
+        </article>
+
+        <article class="stat-card">
+          <span class="stat-icon pink">♡</span>
+          <div>
+            <span>المهام المكتملة</span>
+            <strong id="completedCount">٠</strong>
+            <small>كل خطوة لها قيمة</small>
+          </div>
+        </article>
+
+        <article class="stat-card">
+          <span class="stat-icon gold">♛</span>
+          <div>
+            <span>الأوسمة التي حصلتِ عليها</span>
+            <strong id="badgeCount">٠</strong>
+            <small>افتحي أوسمة جديدة مع تقدّمك</small>
+          </div>
+        </article>
+      </section>
+
+      <section class="quests-section" id="quests">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">اجعلي يومك مميزًا</span>
+            <h2>مهمتك القادمة <span class="heading-star">✦</span></h2>
+            <p>اختاري خطوة صغيرة وابدئي إنجازًا جديدًا.</p>
+          </div>
+
+          <span class="quest-counter" id="questCounter">٠ من ٦ مهام مكتملة</span>
+        </div>
+
+        <div class="filters" id="filters">
+          <button class="filter active" data-filter="All">كل المهام</button>
+          <button class="filter" data-filter="Learning">التعلّم</button>
+          <button class="filter" data-filter="Coding">البرمجة</button>
+          <button class="filter" data-filter="Wellness">العافية</button>
+          <button class="filter" data-filter="Creativity">الإبداع</button>
+        </div>
+
+        <div class="quest-grid" id="questGrid"></div>
+      </section>
+
+      <section class="bottom-grid">
+        <article class="panel" id="badges">
+          <div class="panel-heading">
+            <div>
+              <span class="eyebrow">خطواتك المميزة</span>
+              <h2>رفّ الإنجازات</h2>
+            </div>
+            <span class="trophy">♛</span>
+          </div>
+
+          <div class="badge-list" id="badgeList">
+            <div class="empty-badges">
+              أكملي أول مهمة لتحصلي على وسامك الأول ✧
+            </div>
+          </div>
+        </article>
+
+        <article class="panel quote-panel">
+          <span class="quote-mark">“</span>
+          <p>ليس عليكِ أن تصلي إلى النهاية اليوم، يكفي أن تخطوي خطوتك الأولى.</p>
+          <span class="quote-caption">تذكير صغير لكِ ✦</span>
+          <div class="quote-decoration">✧ · ✦ · ✧</div>
+        </article>
+      </section>
+
+      <footer>
+        <span class="brand-icon">✧</span>
+        <p>كل يوم بداية جديدة.</p>
+        <span>تعلّمي · أنجزي · تألّقي</span>
+      </footer>
+
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
 </body>
 </html>
+
